@@ -7,5 +7,5 @@ parallax.style.width = "100%";
 parallax.style.height = "400px";
 window.addEventListener("scroll", function () {
 	let offset = window.pageYOffset;
-	parallax.style.backgroundPositionY = -(offset * 0.7) - 100 + "px";
+	parallax.style.backgroundPositionY = -(offset * 1.05) - 100 + "px";
 })

@@ -1,5 +1,5 @@
 <?php
-include 'database_functions.php';
+include 'hide_functions.php';
 
 $links = array(
 	["url" => "home", "name" => "Home"],

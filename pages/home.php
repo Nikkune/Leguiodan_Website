@@ -13,7 +13,8 @@
 					<p class="card-text"><?=substr(nl2br($news_post->content),0,300) . " ..."?></p>
 				</div>
 				<div class="card-footer">
-					<a href="#" class="btn btn-primary">Voir l'article complet</a>
+					<!--suppress HtmlUnknownTarget -->
+					<a href="index.php?page=post&id=<?=$news_post->id?>" class="btn btn-primary">Voir l'article complet</a>
 				</div>
 			</div>
 		</div>

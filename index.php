@@ -39,10 +39,10 @@ if(in_array($page . ".functions.php",$pages_functions)){
 
 					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 						<?php
-						foreach ($links as ["url" => $url, "name" => $title]) {
+						foreach ($links as ["url" => $url, "name" => $title, "icon" => $icon]) {
 							?>
 							<li>
-								<a href="index.php?page=<?= $url ?>" class="nav-link px-2 <?php echo($page==$url)?"link-light" : "link-secondary" ?>"><?= $title ?></a>
+								<a href="index.php?page=<?= $url ?>" class="nav-link px-2 <?php echo($page==$url)?"link-light" : "link-secondary" ?>"><?= $icon . $title ?></a>
 							</li>
 							<?php
 						}

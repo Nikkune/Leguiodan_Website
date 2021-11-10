@@ -1,4 +1,4 @@
-<h2>News</h2>
+<h2 class="mt-3">News</h2>
 <hr/>
 <?php
 $news_posts = get_news_post();

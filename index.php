@@ -30,7 +30,7 @@ if(in_array($page . ".functions.php",$pages_functions)){
 		<title>Leguiodan</title>
 	</head>
 	<body>
-		<header class="p-3 mb-3 border-bottom bg-dark shadow">
+		<header class="p-3 bg-dark shadow">
 			<div class="container">
 				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 					<a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
@@ -70,7 +70,7 @@ if(in_array($page . ".functions.php",$pages_functions)){
 				</div>
 			</div>
 		</header>
-		<div class="container-fluid" style="min-height: calc(100vh - 178px)">
+		<div class="container-fluid" style="min-height: calc(100vh - 161px)">
 			<?php
 			/** @noinspection PhpIncludeInspection */
 			include 'pages/'.$page.'.php';
@@ -86,5 +86,13 @@ if(in_array($page . ".functions.php",$pages_functions)){
 		</footer>
 		<!-- ===== Javascript ===== -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<?php
+		$pages_js = scandir('assets/scripts/');
+		if (in_array($page.'.scripts.js',$pages_js)){
+			?>
+			<script type="text/javascript" src="assets/scripts/<?=$page.'.scripts.js'?>"></script>
+		<?php
+		}
+		?>
 	</body>
 </html>

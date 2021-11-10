@@ -12,3 +12,5 @@ $links = array(
 	["url" => "Guide", "name" => "Guides"],
 	["url" => "#", "name" => "|"],
 	["url" => "dashboard", "name" => "Dashboard"]);
+
+$messages = array("empty" => "Tous les champs n'ont pas été remplis !!");

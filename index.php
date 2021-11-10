@@ -2,8 +2,8 @@
 include 'assets/functions/main_functions.php';
 
 $pages = scandir('pages/');
-$current_page = htmlspecialchars($_GET['page']);
-if (isset($current_page) && !empty($current_page)){
+if (isset($_GET['page']) && !empty(htmlspecialchars($_GET['page']))){
+	$current_page = htmlspecialchars($_GET['page']);
 	if (in_array($current_page.'.php',$pages)){
 		$page = $current_page;
 	}else{

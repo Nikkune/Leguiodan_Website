@@ -33,7 +33,7 @@ if(in_array($page . ".functions.php",$pages_functions)){
 		<header class="p-3 bg-dark shadow">
 			<div class="container">
 				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-					<a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+					<a href="index.php" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
 						<img src="uploads/images/base/logo.png" class="ratio ratio-1x1" style="width: 40px" alt="">
 					</a>
 
@@ -74,7 +74,7 @@ if(in_array($page . ".functions.php",$pages_functions)){
 		</div>
 		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top bg-dark mt-3">
 			<div class="col-md-4 d-flex align-items-center">
-				<a href="#" class="mx-3 me-2 text-muted text-decoration-none lh-1">
+				<a href="index.php" class="mx-3 me-2 text-muted text-decoration-none lh-1">
 					<img src="uploads/images/base/logo.png" class="ratio ratio-1x1" style="width: 40px" alt="">
 				</a>
 				<span class="text-muted">Copyright © 2021 All rights reserved.</span>

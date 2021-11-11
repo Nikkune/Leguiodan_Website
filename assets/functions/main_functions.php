@@ -9,7 +9,7 @@ $links = array(
 	["url" => "#", "name" => "|", "icon" => ''],
 	["url" => "server", "name" => "Server", "icon" => '<i class="bi bi-server me-2"></i>'],
 	["url" => "news", "name" => "News", "icon" => '<i class="bi bi-newspaper me-2"></i>'],
-	["url" => "guide", "name" => "Guides", "icon" => '<i class="bi bi-journal-richtext me-2"></i>']);
+	["url" => "guides", "name" => "Guides", "icon" => '<i class="bi bi-journal-richtext me-2"></i>']);
 
 $messages = array("empty" => "Tous les champs n'ont pas été remplis !!");
 
@@ -17,4 +17,21 @@ function date_fr($date) {
 	$Day = array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
 	$Month = array("", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
 	return $Day[date("w", $date)] . " " . date("d", $date) . " " . $Month[date("n", $date)] . " " . date("Y", $date);
+}
+
+function get_role_icon($role) {
+	switch ($role) {
+		case 1:
+			return '<i class="bi bi-person-fill"></i>';
+		case 2:
+			return '<i class="bi bi-youtube"></i>';
+		case 3:
+			return '<i class="bi bi-pen"></i>';
+		case 4:
+			return '<i class="bi bi-wrench"></i>';
+		case 5:
+			return '<i class="bi bi-code-slash"></i>';
+		default:
+			return '<i class="bi bi-bug-fill"></i>';
+	}
 }

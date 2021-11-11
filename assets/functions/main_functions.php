@@ -5,7 +5,9 @@ include 'hidden_functions.php';
 $links = array(
 	["url" => "dashboard", "name" => "Dashboard", "icon" => '<i class="bi bi-sliders me-2"></i>', "perm" => "modo"],
 	["url" => "writeNews", "name" => "Publier un arcticle", "icon" => '<i class="bi bi-pencil-square me-2"></i>', "perm" => "writer"],
+	["url" => "writeGuides", "name" => "Publier un guide", "icon" => '<i class="bi bi-pencil-square me-2"></i>', "perm" => "writer"],
 	["url" => "newsList", "name" => "Listing des arcticles", "icon" => '<i class="bi bi-list-nested me-2"></i>', "perm" => "writer"],
+	["url" => "guidesList", "name" => "Listing des guides", "icon" => '<i class="bi bi-list-nested me-2"></i>', "perm" => "writer"],
 	["url" => "membersList", "name" => "Listing des membres", "icon" => '<i class="bi bi-person-lines-fill me-2"></i>', "perm" => "modo"],
 	["url" => "exits", "name" => "Quitter", "icon" => '<i class="bi bi-box-arrow-right me-2"></i>', "perm" => "writer"],
 	["url" => "logout", "name" => "Déconnexion", "icon" => '<i class="bi bi-door-closed me-2"></i>', "perm" => "writer"]

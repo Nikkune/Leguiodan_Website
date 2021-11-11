@@ -46,6 +46,20 @@ if (in_array($page . ".functions.php", $pages_functions)) {
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+		<link rel="stylesheet" href="assets/css/wbbtheme.css">
+		<!-- ===== Javascript ===== -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="assets/scripts/wysibb.min.js"></script>
+		<script src="assets/scripts/wysibb_fr.js"></script>
+		<?php
+		$pages_js = scandir('assets/scripts/');
+		if (in_array($page . '.scripts.js', $pages_js)) {
+			?>
+			<script type="text/javascript" src="assets/scripts/<?= $page . '.scripts.js' ?>"></script>
+			<?php
+		}
+		?>
 		<!--suppress HtmlUnknownTarget -->
 		<link rel="icon" type="image/png" href="<?= $baseWebSite ?>/uploads/images/base/logo.png">
 		<title>Leguiodan</title>
@@ -115,24 +129,5 @@ if (in_array($page . ".functions.php", $pages_functions)) {
 				<span class="text-muted">Copyright © 2021 All rights reserved.</span>
 			</div>
 		</footer>
-		<!-- ===== Javascript ===== -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script>
-			$("textarea").each(function () {
-				this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
-			}).on("input", function () {
-				this.style.height = "auto";
-				this.style.height = (this.scrollHeight) + "px";
-			});
-		</script>
-		<?php
-		$pages_js = scandir('assets/scripts/');
-		if (in_array($page . '.scripts.js', $pages_js)) {
-			?>
-			<script type="text/javascript" src="assets/scripts/<?= $page . '.scripts.js' ?>"></script>
-			<?php
-		}
-		?>
 	</body>
 </html>

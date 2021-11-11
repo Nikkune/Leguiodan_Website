@@ -9,3 +9,10 @@ window.addEventListener("scroll", function () {
 	let offset = window.pageYOffset;
 	parallax.style.backgroundPositionY = -(offset * 1.05) - 100 + "px";
 });
+
+$("textarea").each(function () {
+	this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+}).on("input", function () {
+	this.style.height = "auto";
+	this.style.height = (this.scrollHeight) + "px";
+});

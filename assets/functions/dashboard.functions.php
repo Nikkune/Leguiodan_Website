@@ -1,16 +1,13 @@
 <?php
-function inTable($table_name, $table) {
+function inTable($table) {
 	global $dbWeb;
-	if ($table_name == "Rédacteurs") {
-		$query = $dbWeb->query("SELECT COUNT(id) FROM members WHERE role = 3");
-	} elseif ($table_name == "Modérateurs") {
-		$query = $dbWeb->query("SELECT COUNT(id) FROM members WHERE role = 4");
-	} elseif ($table_name == "Administrateurs") {
-		$query = $dbWeb->query("SELECT COUNT(id) FROM members WHERE role = 5");
-	} else {
-		/** @noinspection SqlResolve */
-		$query = $dbWeb->query("SELECT COUNT(id) FROM $table");
+	/** @noinspection SqlResolve */
+	$sql = "SELECT COUNT(id) FROM $table[0]";
+	if ($table[1] != null){
+		$option = $table[1];
+		$sql .= " WHERE $option[0] = '$option[1]'";
 	}
+	$query = $dbWeb->query($sql);
 	return $query->fetch();
 }
 

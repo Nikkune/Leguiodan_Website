@@ -7,26 +7,29 @@ if (is_writer($_SESSION['connectedUser'])){
 <div class="row row-cols-3">
 	<?php
 	$tables = [
-		"Administrateurs" => "members",
-		"Modérateurs" => "members",
-		"Rédacteurs" => "members",
-		"News" => "news_post",
-		"Commentaires" => "news_comments"
+		"Administrateurs" => ["members",["role",5]],
+		"Modérateurs" => ["members",["role",4]],
+		"Rédacteurs" => ["members",["role",3]],
+		"News" => ["news_post",null],
+		"Commentaires" => ["news_comments",null],
+		"Images" => ["files_tables",["type","illus"]],
+		"Autres Fichier" => ["files_tables",["type","other"]]
 	];
 	
 	$colors = [
 		"news_post" => "primary",
 		"news_comments" => "success",
-		"members" => "info"
+		"members" => "info",
+		"files_tables"=> "danger"
 	];
 	
 	foreach ($tables as $table_name => $table) {
 		?>
 		<div class="col">
-			<div class="card text-white bg-<?= getColor($table, $colors) ?> mb-3">
+			<div class="card text-white bg-<?= getColor($table[0], $colors) ?> mb-3">
 				<div class="card-header"><h5><?= $table_name ?></h5></div>
 				<div class="card-body">
-					<?php $nbrInTable = inTable($table_name, $table) ?>
+					<?php $nbrInTable = inTable($table) ?>
 					<h4 class="card-title"><?= $nbrInTable[0] ?></h4>
 				</div>
 			</div>

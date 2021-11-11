@@ -1,7 +1,7 @@
 <?php
-	if (isset($_SESSION['connectedUser'])){
-		header("Location:index.php?page=dashboard");
-	}
+if (isset($_SESSION['connectedUser'])) {
+	header("Location:index.php?page=dashboard");
+}
 ?>
 <div class="row justify-content-center">
 	<div class="col-4">
@@ -20,21 +20,26 @@
 				$errors = [];
 				if (empty($email) || empty($password)) {
 					$errors['empty'] = $messages['empty'];
-				}elseif (has_right($email,$password) == 0){
+				} elseif (has_right($email, $password) == 0) {
 					$errors['exist'] = $messages['exist'];
 				}
 				
 				if (!empty($errors)) {
-					foreach ($errors as $error) {
-						?>
-						<div class="alert alert-danger" role="alert">
-							<?= $error ?>
-						</div>
-						<?php
-					}
+				foreach ($errors as $error) {
+					?>
+					<div class="alert alert-danger" role="alert">
+						<?= $error ?>
+					</div>
+				<?php
+				}
 				}else{
-					$_SESSION['connectedUser'] = $email;
-					header("Location:index.php?page=dashboard");
+				$_SESSION['connectedUser'] = $email;
+				$_SESSION['userPerm'] = get_right($email);
+				?>
+					<script>
+						window.location.replace('index.php?page=dashboard')
+					</script>
+					<?php
 				}
 			}
 			?>

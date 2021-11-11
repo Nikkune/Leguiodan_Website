@@ -18,23 +18,29 @@ $administrators = get_members('5');
 	</thead>
 	<tbody>
 	<?php
-	if (has_mini_perm("modo", $_SESSION['connectedUser'])) {
-		foreach ($administrators as $administrator) {
+	foreach ($administrators as $administrator) {
+		if (has_mini_perm("modo", $_SESSION['connectedUser'])) {
 			echo(writeMember($administrator));
 		}
-		foreach ($members as $member) {
-			echo(writeMember($member));
+	}
+	foreach ($moderators as $moderator) {
+		if (has_mini_perm("admin", $_SESSION['connectedUser'])) {
+			echo(writeMember($moderator));
 		}
-		foreach ($youtubers as $youtuber) {
+	}
+	foreach ($writers as $writer) {
+		if (has_mini_perm("admin", $_SESSION['connectedUser'])) {
+			echo(writeMember($writer));
+		}
+	}
+	foreach ($youtubers as $youtuber) {
+		if (has_mini_perm("modo", $_SESSION['connectedUser'])) {
 			echo(writeMember($youtuber));
 		}
 	}
-	if (has_mini_perm("admin",$_SESSION['connectedUser'])){
-		foreach ($writers as $writer) {
-			echo(writeMember($writer));
-		}
-		foreach ($moderators as $moderator) {
-			echo(writeMember($moderator));
+	foreach ($members as $member) {
+		if (has_mini_perm("modo", $_SESSION['connectedUser'])) {
+			echo(writeMember($member));
 		}
 	}
 	?>

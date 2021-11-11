@@ -15,10 +15,3 @@ function get_illus_nbr(){
 	$query = $dbWeb->query("SELECT COUNT(id) FROM files_tables WHERE type = 'illus'");
 	return $query->fetch();
 }
-
-/** @noinspection DuplicatedCode */
-function date_fr($date) {
-	$Day = array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
-	$Month = array("", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
-	return $Day[date("w", $date)] . " " . date("d", $date) . " " . $Month[date("n", $date)] . " " . date("Y", $date);
-}

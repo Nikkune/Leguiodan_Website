@@ -49,10 +49,6 @@ if(in_array($page . ".functions.php",$pages_functions)){
 						?>
 					</ul>
 
-					<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" data-dashlane-rid="3f6e9c797e8cfae8" data-form-type="">
-						<input type="search" class="form-control" placeholder="Search..." aria-label="Search" data-dashlane-rid="9fb70ce8e7ae4abc" data-form-type="">
-					</form>
-
 					<div class="dropdown text-end">
 						<a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
 							<img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">

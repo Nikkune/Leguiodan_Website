@@ -8,7 +8,7 @@ parallax.style.height = "400px";
 window.addEventListener("scroll", function () {
 	let offset = window.pageYOffset;
 	parallax.style.backgroundPositionY = -(offset * 1.05) - 100 + "px";
-})
+});
 
 $("textarea").each(function () {
 	this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");

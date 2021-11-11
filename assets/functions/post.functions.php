@@ -28,7 +28,7 @@ function comment($name, $comment) {
 
 function get_comments() {
 	global $dbWeb;
-	$req = $dbWeb->query("SELECT name, comment, date FROM news_comments WHERE post_id = '{$_GET['id']}' ORDER BY date DESC");
+	$req = $dbWeb->query("SELECT name, comment, date FROM news_comments WHERE post_id = '{$_GET['id']}' AND seen = '1' ORDER BY date DESC");
 	$results = [];
 	while ($rows = $req->fetchObject()) {
 		$results[] = $rows;

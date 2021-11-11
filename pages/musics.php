@@ -1,0 +1,3 @@
+<div class="container-fluid pt-3" style="min-height: calc(100vh - 200px)">
+	<iframe class="w-100" style="min-height: calc(100vh - 200px)" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLjBmM1hXjeWk24_dRt5RRq7AQXhlpLlEb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>

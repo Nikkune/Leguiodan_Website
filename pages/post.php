@@ -21,12 +21,12 @@ if ($post == false) {
 	<h4>Commentaires:</h4>
 	<?php
 	$responses = get_comments();
-	if ($responses != false){
+	if ($responses != false) {
 		foreach ($responses as $response) {
 			?>
 			<figure>
 				<blockquote class="blockquote">
-					<p><?=nl2br($response->comment)?></p>
+					<p><?= nl2br($response->comment) ?></p>
 				</blockquote>
 				<figcaption class="blockquote-footer">
 					<?= date("H:i", strtotime($response->date)) ?> par
@@ -35,7 +35,7 @@ if ($post == false) {
 			</figure>
 			<?php
 		}
-	}else echo "Aucun commentaire n'a été publié... Soyez le premier !"
+	} else echo "Aucun commentaire n'a été publié... Soyez le premier !"
 	?>
 	<h4>Commenter:</h4>
 	<?php

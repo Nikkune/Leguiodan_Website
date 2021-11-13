@@ -7,11 +7,19 @@ $members = get_members();
 	foreach ($members as $member) {
 		?>
 		<div class="col">
-			<div class="card text-white bg-secondary mb-3">
-				<div class="card-body text-center">
-					<h5 class="card-title"><?= get_role_icon($member->role) . " " . $member->name ?></h5>
+			<!--suppress HtmlDeprecatedTag -->
+			<center>
+				<div class="card text-white bg-secondary mb-3 w-75">
+					<!--suppress HtmlDeprecatedTag -->
+					<center>
+						<img src="uploads/images/avatars/<?= $member->files ?>" class="card-img-top rounded-circle ratio ratio-1x1 p-3" alt="<?= $member->name ?>">
+					</center>
+					<div class="card-body text-center">
+						<h5 class="card-title"><?= $member->name ?></h5>
+						<p><?= get_role_aff($member->role) ?></p>
+					</div>
 				</div>
-			</div>
+			</center>
 		</div>
 		<?php
 	}

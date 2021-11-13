@@ -37,40 +37,51 @@ if ($post == false) {
 		}
 	} else echo "Aucun commentaire n'a été publié... Soyez le premier !"
 	?>
-	<h4>Commenter:</h4>
+	<?php if (isset($_SESSION['userEmail']) && !empty($_SESSION['userEmail'])) { ?>
+		<h4>Commenter:</h4>
 	<?php
 	if (isset($_POST['formComments'])) {
-		$comment = htmlspecialchars(trim($_POST['comments']));
-		$errors = [];
-		if (empty($comment)) {
-			$errors['empty'] = $messages['empty'];
-		}
-		
-		if (!empty($errors)) {
-		foreach ($errors as $error) {
-			?>
-			<div class="alert alert-danger" role="alert">
-				<?= $error ?>
-			</div>
-		<?php
-		}
-		}else{
-		comment("Nikkune", $comment);
-		?>
-			<script>
-				window.location.replace("index.php?page=post&id=<?= htmlspecialchars($_GET['id'])?>")
-			</script>
-			<?php
-		}
+	$comment = htmlspecialchars(trim($_POST['comments']));
+	$errors = [];
+	if (empty($comment)) {
+		$errors['empty'] = $messages['empty'];
+	}
+	
+	if (!empty($errors)) {
+	foreach ($errors
+	
+	as $error) {
+	?>
+		<div class="alert alert-danger" role="alert">
+			<?= $error ?>
+		</div>
+	<?php
+	}
+	}else{
+	comment($_SESSION['userEmail'], $comment);
+	?>
+		<script>
+			window.location.replace("index.php?page=post&id=<?= htmlspecialchars($_GET['id'])?>")
+		</script>
+	<?php
+	}
 	}
 	?>
 
-	<form method="post">
-		<div class="mb-3">
-			<label for="comments" class="form-label">Commentaire</label>
-			<textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+		<form method="post">
+			<div class="mb-3">
+				<label for="comments" class="form-label">Commentaire</label>
+				<textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+			</div>
+			<button type="submit" name="formComments" class="btn btn-primary">Poster le commentaire</button>
+		</form>
+	<?php }else{
+	?>
+		<div class="card bg-danger">
+			<div class="card-body">
+				<p>Vous devez être connecté pour poster un commentaire !</p>
+			</div>
 		</div>
-		<button type="submit" name="formComments" class="btn btn-primary">Poster le commentaire</button>
-	</form>
-
+		<?php
+	} ?>
 </div>

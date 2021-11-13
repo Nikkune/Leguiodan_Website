@@ -23,7 +23,7 @@ function get_comments() {
 	global $dbWeb;
 	$req = $dbWeb->query("
 	SELECT news_comments.id,
-	       news_comments.name,
+	       members.name,
 	       news_comments.date,
 	       news_comments.post_id,
 	       news_comments.comment,
@@ -34,7 +34,7 @@ function get_comments() {
 	JOIN news_post
 	ON news_comments.post_id = news_post.id
 	JOIN members
-	ON news_comments.name = members.name
+	ON news_comments.email = members.email
 	WHERE news_comments.seen = '0'
 	ORDER BY news_comments.date
 	");

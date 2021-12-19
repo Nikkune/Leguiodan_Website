@@ -68,3 +68,29 @@ function get_user_avatar() {
 		return 'unknow_user.png';
 	}
 }
+
+function sendConfirmationMail($email, $pseudo, $token) {
+	$subject = 'Leguidoan - Confirmation d\'inscription';
+	$link = get_base(isOnline()) . '/index.php?page=confirmEmail&token=' . $token;
+	$messageHTML = '<html lang="fr">
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+		<meta content="width=device-width" name="viewport" />
+		<title></title>
+	</head>
+	<body style="text-align: justify-all; font-family: Verdana, sans-serif; width: 30%">
+		<h1 align="center">Confirmation de votre e-mail</h1>
+		<div align="center">
+			<img src="' . get_base(isOnline()) . '/uploads/images/base/leguiodan.png' . '?>" style="width: 40%" alt="">
+			<br />
+			<p style="text-justify: inter-word;"><strong>' . $pseudo . ' :</strong>
+				<br /> Merci d\'avoir rejoint la communauté de Légiodan ! Pour terminer votre inscription et activer votre compte, vérifiez simplement votre adresse en
+				<a href="' . $link . '">cliquant ici</a>. Attention, après validation, nous utiliserons cette adresse pour créer ou actualiser un compte Léguiodan.
+			</p>
+			<p>Ne pas répondre à cet e-mail !</p>
+		</div>
+	</body>
+</html>';
+	$messageNoHTML = 'Merci d\'avoir rejoint la communauté de Légiodan ! Pour terminer votre inscription et activer votre compte, vérifiez simplement votre adresse en copient et en collent le lien suivant dans votre navigateur pour confirmer votre e-mail :'.$link .' . Attention, après validation, nous utiliserons cette adresse pour créer ou actualiser un compte Léguiodan.';
+	send_mail($subject,$messageHTML,$messageNoHTML,$email);
+}

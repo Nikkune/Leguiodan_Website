@@ -32,3 +32,4 @@ function get_right($email){
 			return "error";
 	}
 }
+?>

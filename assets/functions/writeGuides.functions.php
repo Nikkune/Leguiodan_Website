@@ -11,3 +11,4 @@ function postGuides($title, $content, $posted) {
 	$req = $dbWeb->prepare($sql);
 	$req->execute($p);
 }
+?>

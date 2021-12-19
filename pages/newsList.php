@@ -27,3 +27,4 @@ foreach ($news_posts as $news_post){
 	</div>
 	<?php
 }
+?>

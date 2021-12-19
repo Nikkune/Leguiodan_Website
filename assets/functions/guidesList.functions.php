@@ -32,3 +32,4 @@ function get_role_icon($role) {
 			return '<i class="bi bi-bug-fill"></i>';
 	}
 }
+?>

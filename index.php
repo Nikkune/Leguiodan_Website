@@ -66,37 +66,35 @@ if (in_array($page . ".functions.php", $pages_functions)) {
 	</head>
 	<body>
 		<header class="p-3 bg-warning shadow">
-			<div class="container">
-				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-					<a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-						<!--suppress HtmlUnknownTarget -->
-						<img src="<?= $baseWebSite ?>/uploads/images/base/logo.png" class="ratio ratio-1x1" style="width: 40px" alt="">
-					</a>
+			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+				<a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+					<!--suppress HtmlUnknownTarget -->
+					<img src="<?= $baseWebSite ?>/uploads/images/base/logo.png" class="ratio ratio-1x1" style="width: 40px" alt="">
+				</a>
 
-					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-						<?php
-						foreach ($links as ["url" => $url, "name" => $title, "icon" => $icon, "perm" => $min_perm]) {
-							if ($userPerm != "deco") {
-								if (has_mini_perm($min_perm, $_SESSION['connectedUser'])) {
-									?>
-									<li>
-										<a href="index.php?page=<?= $url ?>" class="nav-link px-2 <?php echo ($page == $url) ? "link-dark" : "link-secondary" ?>"><?= $icon . $title ?></a>
-									</li>
-									<?php
-								}
-							} else {
-								if ($url == "dashboard") {
-									?>
-									<li>
-										<a href="index.php?page=<?= $url ?>" class="nav-link px-2 <?php echo ($page == $url) ? "link-dark" : "link-secondary" ?>"><?= $icon . $title ?></a>
-									</li>
-									<?php
-								}
+				<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+					<?php
+					foreach ($links as ["url" => $url, "name" => $title, "icon" => $icon, "perm" => $min_perm]) {
+						if ($userPerm != "deco") {
+							if (has_mini_perm($min_perm, $_SESSION['connectedUser'])) {
+								?>
+								<li>
+									<a href="index.php?page=<?= $url ?>" class="nav-link px-2 <?php echo ($page == $url) ? "link-dark" : "link-secondary" ?>"><?= $icon . $title ?></a>
+								</li>
+								<?php
+							}
+						} else {
+							if ($url == "dashboard") {
+								?>
+								<li>
+									<a href="index.php?page=<?= $url ?>" class="nav-link px-2 <?php echo ($page == $url) ? "link-dark" : "link-secondary" ?>"><?= $icon . $title ?></a>
+								</li>
+								<?php
 							}
 						}
-						?>
-					</ul>
-				</div>
+					}
+					?>
+				</ul>
 			</div>
 		</header>
 		<div class="container-fluid" style="min-height: calc(100vh - 161px)">

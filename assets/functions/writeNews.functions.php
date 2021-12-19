@@ -42,3 +42,4 @@ function post_img($tmp_name,$extension){
 	compressImage($tmp_name,$path . $id.$extension);
 	header("Location:index.php?page=post&id=".$id);
 }
+?>

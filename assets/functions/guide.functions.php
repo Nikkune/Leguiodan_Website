@@ -19,3 +19,4 @@ function edit($title, $content, $posted,$id){
 	$req = $dbWeb->prepare($sql);
 	$req->execute($e);
 }
+?>

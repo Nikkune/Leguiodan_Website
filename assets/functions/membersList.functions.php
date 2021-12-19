@@ -66,3 +66,4 @@ function get_role_name($role) {
 			return '<i class="bi bi-bug-fill"></i> Erreur';
 	}
 }
+?>

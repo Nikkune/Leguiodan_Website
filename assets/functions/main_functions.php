@@ -94,3 +94,4 @@ function sendConfirmationMail($email, $pseudo, $token) {
 	$messageNoHTML = 'Merci d\'avoir rejoint la communauté de Légiodan ! Pour terminer votre inscription et activer votre compte, vérifiez simplement votre adresse en copient et en collent le lien suivant dans votre navigateur pour confirmer votre e-mail :'.$link .' . Attention, après validation, nous utiliserons cette adresse pour créer ou actualiser un compte Léguiodan.';
 	send_mail($subject,$messageHTML,$messageNoHTML,$email);
 }
+?>

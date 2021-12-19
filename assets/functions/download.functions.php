@@ -9,3 +9,4 @@ function get_files($type) {
 	
 	return $results;
 }
+?>

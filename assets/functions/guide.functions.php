@@ -5,3 +5,4 @@ function get_guide() {
 	$result = $req->fetchObject();
 	return $result;
 }
+?>

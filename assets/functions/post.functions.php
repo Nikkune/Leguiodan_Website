@@ -29,3 +29,4 @@ function get_comments() {
 	}
 	return $results;
 }
+?>

@@ -23,3 +23,4 @@ function hasVerified($email) {
 	$exist = $req->rowCount();
 	return $exist;
 }
+?>

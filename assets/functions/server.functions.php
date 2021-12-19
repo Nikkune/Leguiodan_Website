@@ -33,3 +33,4 @@ function formatPlaytime($playtime)
 	}
 	return $hour . " H et " . $minute . " Min";
 }
+?>

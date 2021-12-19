@@ -24,4 +24,4 @@ if (isset($_GET['token']) && !empty($_GET['token'])){
 }else{
 	header('Location:index.php?page=home');
 }
-
+?>

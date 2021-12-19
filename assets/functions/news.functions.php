@@ -9,3 +9,4 @@ function get_news_post() {
 	
 	return $results;
 }
+?>

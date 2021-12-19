@@ -9,3 +9,4 @@ function get_guides_post() {
 	
 	return $results;
 }
+?>

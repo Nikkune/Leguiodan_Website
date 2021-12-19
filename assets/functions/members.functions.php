@@ -9,3 +9,4 @@ function get_members() {
 	
 	return $results;
 }
+?>

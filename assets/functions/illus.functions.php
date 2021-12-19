@@ -15,3 +15,4 @@ function get_illus_nbr(){
 	$query = $dbWeb->query("SELECT COUNT(id) FROM files_tables WHERE type = 'illus'");
 	return $query->fetch();
 }
+?>

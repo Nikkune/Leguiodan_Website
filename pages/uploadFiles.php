@@ -41,14 +41,13 @@ if (isset($_POST['formFile'])) {
 	} else {
 		$filePath = 'tmpsFiles/' . $name . $fileExt;
 		$resultMv = move_uploaded_file($file['tmp_name'], $filePath);
-		if ($resultMv){
-			moveFile($name,$type,$fileExt);
+		if ($resultMv) {
+			if (moveFile($name, $type, $fileExt)) {
+				insertFile($name, $type, $fileExt, $desc, $public, $dl);
+			} else {
+				die("Une erreur est survenue !");
+			}
 		}
-		/*if ($resultMv) {
-			insertFile($name, $type, $fileExt, $desc, $public, $dl);
-		} else {
-			die("Une erreur est survenue !");
-		}*/
 	}
 }
 ?>

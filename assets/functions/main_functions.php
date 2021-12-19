@@ -9,6 +9,7 @@ $links = array(
 	["url" => "newsList", "name" => "Listing des arcticles", "icon" => '<i class="bi bi-list-nested me-2"></i>', "perm" => "writer"],
 	["url" => "guidesList", "name" => "Listing des guides", "icon" => '<i class="bi bi-list-nested me-2"></i>', "perm" => "writer"],
 	["url" => "membersList", "name" => "Listing des membres", "icon" => '<i class="bi bi-person-lines-fill me-2"></i>', "perm" => "modo"],
+	["url" => "filesList", "name" => "Listing des documents", "icon" => '<i class="bi bi-file-text"></i>', "perm" => "modo"],
 	["url" => "uploadFiles", "name" => "Ajouter des documents", "icon" => '<i class="bi bi-file-plus"></i>', "perm" => "modo"],
 	["url" => "exits", "name" => "Quitter", "icon" => '<i class="bi bi-box-arrow-right me-2"></i>', "perm" => "writer"],
 	["url" => "logout", "name" => "Déconnexion", "icon" => '<i class="bi bi-door-closed me-2"></i>', "perm" => "writer"]

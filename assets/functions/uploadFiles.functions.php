@@ -32,32 +32,35 @@ function insertFile($name, $type, $ext, $desc, $public, $dl) {
 function moveFile($name, $type, $ext) {
 	global $baseWebSite, $ftp_host, $ftp_user_name, $ftp_user_pass;
 	if ($type == 'illus') {
-		$file = $baseWebSite . 'images/base/' . $name . $ext;
+		$file = '/httpdocs/uploads/images/illustrations/' . $name . $ext;
 	} else {
-		$file = $baseWebSite . 'files/others/' . $name . $ext;
+		$file = '/httpdocs/uploads/files/others/' . $name . $ext;
 	}
 	
 	/* Remote File Name and Path */
 	$remote_file = $file;
 	
 	/* File and path to send to remote FTP server */
-	$local_file = 'tmpsFiles' . $name . $ext;
+	$local_file = 'tmpsFiles/' . $name . $ext;
 	
 	/* Connect using basic FTP */
 	$connect_it = ftp_connect($ftp_host);
 	
 	/* Login to FTP */
 	$login_result = ftp_login($connect_it, $ftp_user_name, $ftp_user_pass);
-	
 	/* Send $local_file to FTP */
-	if (ftp_put($connect_it, $remote_file, $local_file, FTP_BINARY)) {
+	if (ftp_put($connect_it,$remote_file,$local_file, FTP_BINARY)) {
 		echo "WOOT! Successfully transfer $local_file\n";
+		unlink($local_file);
+		/* Close the connection */
+		ftp_close($connect_it);
+		return true;
 	} else {
 		echo "Doh! There was a problem\n";
+		
+		/* Close the connection */
+		ftp_close($connect_it);
+		return false;
 	}
-	
-	/* Close the connection */
-	ftp_close($connect_it);
-	
 }
 ?>

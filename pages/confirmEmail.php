@@ -13,7 +13,7 @@ function verifiedUser($token){
 	$sql = "UPDATE members SET verified = '1' WHERE token = :token";
 	$req = $dbWeb->prepare($sql);
 	$req->execute($t);
-	header('Location:index.php?page=home');
+	header('Location:index.php?page=home&msg=confirmOK');
 }
 if (isset($_GET['token']) && !empty($_GET['token'])){
 	if (userExistToken($_GET['token']) == 1){

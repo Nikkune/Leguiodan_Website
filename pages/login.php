@@ -1,6 +1,10 @@
 <?php
 if (isset($_SESSION['userEmail'])) {
-	header("Location:index.php?page=home");
+	?>
+	<script>
+		window.location.replace('index.php?page=home')
+	</script>
+	<?php
 }
 ?>
 <div class="row justify-content-center">
@@ -22,7 +26,7 @@ if (isset($_SESSION['userEmail'])) {
 					$errors['empty'] = $messages['empty'];
 				} elseif (userExist($email, $password) == 0) {
 					$errors['exist'] = $messages['exist'];
-				}elseif (hasVerified($email) == 0){
+				} elseif (hasVerified($email) == 0) {
 					$errors['verified'] = "Vous devez confirmer votre adresse mail avant de vous connecter";
 				}
 				

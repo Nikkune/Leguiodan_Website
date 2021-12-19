@@ -25,12 +25,16 @@ if (isset($_POST['formNews'])) {
 		$errors['taken'] = "L'adresse email est déjà assignée !";
 	}
 	
+	if (pseudo_taken($pseudo)) {
+		$errors['takenP'] = "Le pseudo est déjà assignée !";
+	}
+	
 	if (!empty($_FILES['file']['name'])) {
 		$file = $_FILES['file']['name'];
 		$extensions = ['.png', '.jpg', '.jpeg', '.gif', '.PNG', '.JPG', '.JPEG', '.GIF'];
 		$extension = strrchr($file, '.');
 		if (!in_array($extension, $extensions)) {
-			$errors['image'] = "Cette Image n'est pas valable !!";
+			$errors['image'] = "Cette image n'est pas valable !!";
 		}
 	}
 	

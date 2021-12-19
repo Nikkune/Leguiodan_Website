@@ -16,9 +16,8 @@ $links = array(
 $messages = array("empty" => "Tous les champs n'ont pas été remplis !!", "exist" => "Cet utilisateur n'existe pas ou n'a pas les droits !!");
 
 /** @noinspection PhpInconsistentReturnPointsInspection */
-function has_mini_perm($min_perm, $email){
-	if ($min_perm == "writer")
-	{
+function has_mini_perm($min_perm, $email) {
+	if ($min_perm == "writer") {
 		global $dbWeb;
 		$w = [
 			'email' => $email
@@ -28,8 +27,7 @@ function has_mini_perm($min_perm, $email){
 		$req->execute($w);
 		$exist = $req->rowCount();
 		return $exist;
-	}elseif ($min_perm == "modo")
-	{
+	} elseif ($min_perm == "modo") {
 		global $dbWeb;
 		$w = [
 			'email' => $email
@@ -39,8 +37,7 @@ function has_mini_perm($min_perm, $email){
 		$req->execute($w);
 		$exist = $req->rowCount();
 		return $exist;
-	}elseif ($min_perm == "admin")
-	{
+	} elseif ($min_perm == "admin") {
 		global $dbWeb;
 		$w = [
 			'email' => $email
@@ -53,36 +50,12 @@ function has_mini_perm($min_perm, $email){
 	}
 }
 
-function is_writer($email){
+function is_writer($email) {
 	global $dbWeb;
 	$w = [
 		'email' => $email
 	];
 	$sql = "SELECT * FROM members WHERE email = :email AND role = '3'";
-	$req = $dbWeb->prepare($sql);
-	$req->execute($w);
-	$exist = $req->rowCount();
-	return $exist;
-}
-
-function is_modo($email){
-	global $dbWeb;
-	$w = [
-		'email' => $email
-	];
-	$sql = "SELECT * FROM members WHERE email = :email AND role = '4'";
-	$req = $dbWeb->prepare($sql);
-	$req->execute($w);
-	$exist = $req->rowCount();
-	return $exist;
-}
-
-function is_admin($email){
-	global $dbWeb;
-	$w = [
-		'email' => $email
-	];
-	$sql = "SELECT * FROM members WHERE email = :email AND role = '5'";
 	$req = $dbWeb->prepare($sql);
 	$req->execute($w);
 	$exist = $req->rowCount();
